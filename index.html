@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏 · 寻找游戏的本真乐趣</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(145deg, #fce5cd 0%, #f7d9c4 40%, #f1cbb0 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.5rem;
+            line-height: 1.7;
+            color: #3b2f2a;
+        }
+
+        .card {
+            max-width: 780px;
+            width: 100%;
+            background: #fffcf8;
+            border-radius: 36px;
+            padding: 2.8rem 2.4rem;
+            box-shadow: 0 16px 48px rgba(160, 100, 60, 0.18), 0 4px 12px rgba(0,0,0,0.04);
+            transition: transform 0.25s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 56px rgba(140, 80, 40, 0.20);
+        }
+
+        h1 {
+            font-size: 2.6rem;
+            font-weight: 550;
+            letter-spacing: 0.02em;
+            color: #6b3f2a;
+            margin-bottom: 0.1rem;
+            line-height: 1.2;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .subhead {
+            font-size: 1.1rem;
+            color: #8b6b58;
+            margin-bottom: 2.2rem;
+            border-left: 4px solid #dbaa8a;
+            padding-left: 1rem;
+            font-weight: 380;
+        }
+
+        .hero-text {
+            font-size: 1.06rem;
+            margin-bottom: 2rem;
+            background: #fcf3ec;
+            padding: 1.4rem 1.8rem;
+            border-radius: 28px;
+            color: #4d362b;
+        }
+
+        .hero-text p {
+            margin-bottom: 0.6rem;
+        }
+
+        .hero-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 480;
+            color: #6e4b38;
+            margin: 2rem 0 0.9rem 0;
+            display: inline-block;
+            border-bottom: 3px solid #eacbb4;
+            padding-bottom: 0.15rem;
+        }
+
+        .highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.2rem 0 1.8rem;
+        }
+
+        .highlight-item {
+            background: #f5ede7;
+            border-radius: 50px;
+            padding: 0.5rem 1.3rem;
+            font-size: 0.95rem;
+            font-weight: 430;
+            color: #5a3d2e;
+            box-shadow: inset 0 1px 3px rgba(255,255,245,0.7);
+            border: 1px solid #f0ddd0;
+        }
+
+        .desc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.3rem;
+            margin: 1.2rem 0 1.8rem;
+        }
+
+        .desc-item {
+            background: #fff9f3;
+            border-radius: 24px;
+            padding: 1.2rem 1.2rem 1.4rem;
+            border: 1px solid #f1ddcf;
+            transition: background 0.2s;
+        }
+
+        .desc-item:hover {
+            background: #fcf0e6;
+        }
+
+        .desc-item h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #6d4b37;
+            margin-bottom: 0.4rem;
+        }
+
+        .desc-item p {
+            font-size: 0.95rem;
+            color: #5f4a3c;
+        }
+
+        .usage {
+            background: #f6ede5;
+            border-radius: 28px;
+            padding: 1.4rem 1.8rem;
+            margin: 2rem 0 1.6rem;
+        }
+
+        .usage p {
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-mini {
+            margin: 1.8rem 0 1.2rem;
+        }
+
+        .faq-mini details {
+            margin-bottom: 0.6rem;
+            border-bottom: 1px solid #ebd9cb;
+            padding: 0.5rem 0;
+        }
+
+        .faq-mini summary {
+            font-weight: 470;
+            color: #6f4c39;
+            cursor: pointer;
+            padding: 0.3rem 0;
+            font-size: 1.03rem;
+        }
+
+        .faq-mini details p {
+            margin-top: 0.4rem;
+            padding-left: 0.3rem;
+            color: #554237;
+            font-size: 0.95rem;
+        }
+
+        .link-sentence {
+            background: #fbf4ed;
+            border-radius: 60px;
+            padding: 1.1rem 1.8rem;
+            margin: 2rem 0 0.5rem;
+            text-align: center;
+            font-size: 1.08rem;
+            border: 1px solid #e9d4c3;
+        }
+
+        .link-sentence a {
+            color: #8f4f2e;
+            text-decoration: none;
+            font-weight: 550;
+            padding: 0.1rem 0.5rem;
+            border-radius: 36px;
+            background: #f5e5da;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .link-sentence a:hover {
+            background: #dbaa8a;
+            color: #2c1c14;
+        }
+
+        .footnote {
+            font-size: 0.85rem;
+            color: #8b7567;
+            text-align: center;
+            margin-top: 1.8rem;
+            border-top: 1px solid #eddccf;
+            padding-top: 1.4rem;
+            letter-spacing: 0.02em;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 1.2rem 0.8rem;
+            }
+            .card {
+                padding: 1.8rem 1.2rem;
+                border-radius: 28px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            .desc-grid {
+                grid-template-columns: 1fr;
+                gap: 0.9rem;
+            }
+            .hero-text {
+                padding: 1rem 1.2rem;
+            }
+            .link-sentence {
+                padding: 0.9rem 1rem;
+                font-size: 1rem;
+            }
+            .highlights {
+                gap: 0.6rem;
+            }
+            .highlight-item {
+                font-size: 0.85rem;
+                padding: 0.3rem 1rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .card {
+                padding: 1.4rem 0.9rem;
+            }
+            h1 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>🎮 爱游戏</h1>
+        <div class="subhead">不是所有的屏幕时间都值得被遗忘</div>
+
+        <div class="hero-text">
+            <p>游戏曾经只是闲暇的插曲，后来却慢慢占据了太多人的完整夜晚。我们开始想念那种——打开一局游戏，心无旁骛，打完就去做别的事的清爽感。<strong>爱游戏</strong>并不是要你做更多选择，而是帮你找回那个简单的入口：不需要注册、没有弹窗干扰、无需等待冗长加载。</p>
+            <p>它只是一座安静的桥，连接你和那些真正值得花时间的游戏内容。没有排行榜绑架你的虚荣，没有首充礼包在角落里闪烁。你点开，玩一会儿，然后放下。</p>
+        </div>
+
+        <div class="section-title">✦ 这里有什么不同</div>
+        <div class="highlights">
+            <span class="highlight-item">无账号机制</span>
+            <span class="highlight-item">零弹窗打扰</span>
+            <span class="highlight-item">轻量快速响应</span>
+            <span class="highlight-item">内容纯粹聚焦</span>
+        </div>
+
+        <div class="desc-grid">
+            <div class="desc-item">
+                <h3>🎯 直奔主题</h3>
+                <p>从你点击到沉浸，中间只隔着一层薄薄的加载条。没有新手教学，没有强制引导，游戏本身就是最好的说明书。</p>
+            </div>
+            <div class="desc-item">
+                <h3>🧘 不贩卖焦虑</h3>
+                <p>没有每日签到、没有战力排行、没有限时活动。你错过的一切都不是损失，因为这里本来就没有“错过”的概念。</p>
+            </div>
+            <div class="desc-item">
+                <h3>📱 跨屏随意</h3>
+                <p>手机、平板、电脑，浏览器打开就能继续。不需要同步账号，不需要担心存档丢失，游戏进度跟着你的直觉走。</p>
+            </div>
+            <div class="desc-item">
+                <h3>🌱 安静迭代</h3>
+                <p>内容会慢慢更新，但不会用红点提醒你。你可以隔一周回来，发现多了几个新玩法，没人催你“错过了一个亿”。</p>
+            </div>
+        </div>
+
+        <div class="usage">
+            <p><strong>一些自然的使用建议</strong></p>
+            <p>— 把它放在书签栏的角落，等一杯咖啡凉下来的时间打开。<br>
+            — 不用特意安排“游戏时间”，几分钟的间隙正好。<br>
+            — 如果某一关让你皱眉，关掉页面去做别的事，答案有时在路上。</p>
+        </div>
+
+        <div class="faq-mini">
+            <details>
+                <summary>这里需要付费吗？</summary>
+                <p>目前所有内容都可以直接访问，没有隐藏付费。如果将来出现部分增值内容，我们会用最简单的方式说明，不会设置自动续费或默认扣款。</p>
+            </details>
+            <details>
+                <summary>我的浏览记录会被收集吗？</summary>
+                <p>我们不会追踪你的个人行为，不部署第三方分析脚本。唯一记录的是服务器端的匿名访问次数，仅用于了解大致的流量情况。</p>
+            </details>
+            <details>
+                <summary>为什么页面看起来很简单？</summary>
+                <p>简单是刻意的。我们相信好的游戏入口应该像一扇安静的门，而不是喧闹的集市。少一点视觉噪音，多一点专注空间。</p>
+            </details>
+        </div>
+
+        <div class="link-sentence">
+            如果你也认同这种克制的游戏态度，不妨去 <a href="https://appaiyouxi.com.cn">爱游戏</a> 看一看，那里没有喧哗，只有一个个等待被启动的乐趣。
+        </div>
+
+        <div class="footnote">
+            <span>没有广告 · 没有会员 · 没有焦虑 · 只有游戏</span>
+        </div>
+    </div>
+</body>
+</html>
